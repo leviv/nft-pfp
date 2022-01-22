@@ -37,6 +37,28 @@
     <input type="file" id="imageLoader" name="imageLoader" />
     <canvas id="canvas"></canvas>
 
+    <div class="modal__overlay hidden"></div>
+    <div
+      role="dialog"
+      aria-labelledby="dialog header"
+      aria-modal="true"
+      class="modal__wrapper hidden"
+    >
+      <div class="modal__header">
+        <h2>Right click to save!</h2>
+        <button aria-label="Close modal" class="modal__close">
+          <p>&times;</p>
+        </button>
+      </div>
+      <div class="modal__body">
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+          alt="Final hexagon image"
+          id="finalImage"
+        />
+      </div>
+    </div>
+
     <canvas class="webgl"></canvas>
   </body>
 </html>

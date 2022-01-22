@@ -236,8 +236,6 @@ function handleImage(e) {
       const paddingWidth = PADDING_WIDTH_PERCENTAGE * HEX_HEIGHT * scaleFactor;
       const paddingHeight = PADDING_HEIGHT_PERCENTAGE * HEX_WIDTH * scaleFactor;
 
-      console.log(scaleFactor, translateX, translateY);
-
       let transformationMatrix = document
         .createElementNS("http://www.w3.org/2000/svg", "svg")
         .createSVGMatrix();
@@ -249,8 +247,6 @@ function handleImage(e) {
 
       canvas2d.width = HEX_WIDTH * scaleFactor + paddingWidth;
       canvas2d.height = HEX_HEIGHT * scaleFactor + paddingHeight;
-
-      console.log(canvas2d.width, canvas2d.height);
 
       // Clip the image to the svg path
       const scaledPath = new Path2D();
@@ -298,15 +294,14 @@ canvas2d.resizeAndExport = function (width, height) {
     width,
     height
   );
+
+  openModal();
+
   // return the resized canvas dataURL
   const image = c.toDataURL();
-  const downloadLink = document.createElement("a");
-  // Add the name of the file to the link
-  downloadLink.download = "nft-pfp.png";
+  const downloadLink = document.getElementById("finalImage");
   // Attach the data to the link
-  downloadLink.href = image;
-  // Get the code to click the download link
-  downloadLink.click();
+  downloadLink.src = image;
 };
 
 /**
@@ -380,3 +375,26 @@ const tick = () => {
 };
 
 tick();
+
+const modal = document.querySelector(".modal__wrapper");
+const overlay = document.querySelector(".modal__overlay");
+const closeBtn = document.querySelector(".modal__close");
+
+const openModal = () => {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeModal = () => {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+// closing modal&overlay on click and on ESC
+closeBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+document.addEventListener("keydown", (e) => {
+  if (e.keyCode === 27 && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});

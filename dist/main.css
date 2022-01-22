@@ -1,0 +1,73 @@
+:root {
+  /* violet */
+  --primary-color: 111, 76, 255;
+
+  /* white */
+  --text-color: 256, 256, 256;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  background: radial-gradient(#fff 1px, transparent 0),
+    radial-gradient(#fff 1px, transparent 0),
+    linear-gradient(to right, #043a3a, #3e0346);
+  background-size: 104px 104px, 104px 104px, contain;
+  background-position: 0 30px, 52px 80px;
+}
+
+#canvas {
+  display: none;
+}
+
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  font-family: sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  background-color: rgba(var(--primary-color), 0.25);
+  border: 1px solid rgba(var(--primary-color), 0.55);
+  color: rgba(var(--text-color), 0.8);
+  position: fixed;
+  left: 50%;
+  bottom: 75px;
+  transform: translateX(-50%);
+  display: block;
+  z-index: 9999;
+}
+
+label:hover {
+  background-color: rgba(var(--primary-color), 0.35);
+  border: 1px solid rgba(var(--primary-color), 0.5);
+  color: rgba(var(--text-color), 0.9);
+  box-shadow: rgba(var(--primary-color), 0.5) 0px 0px 20px 0px;
+  transition: all 0.3s ease;
+  margin-bottom: 1.1rem;
+}
+
+
+/*# sourceMappingURL=main.css.map*/

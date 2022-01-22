@@ -197,3 +197,12 @@ label:hover {
   text-align: center;
   padding: 25px;
 }
+
+.attribution {
+  color: white;
+  text-align: center;
+}
+
+.attribution a {
+  color: #ed7dfc;
+}

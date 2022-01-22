@@ -198,5 +198,14 @@ label:hover {
   padding: 25px;
 }
 
+.attribution {
+  color: white;
+  text-align: center;
+}
+
+.attribution a {
+  color: #ed7dfc;
+}
+
 
 /*# sourceMappingURL=main.css.map*/
